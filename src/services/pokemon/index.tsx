@@ -15,4 +15,10 @@ export class PokemonService{
         const pokemon: Pokemon = await response.json();
         return pokemon;
     }
+
+    static async searchedPokemon(nameOrId: string) : Promise<Pokemon>{
+        const response = await fetch(`${API_BASE_URL}/${nameOrId}`);
+        const pokemon: Pokemon = await response.json();
+        return pokemon;
+    }
 }
